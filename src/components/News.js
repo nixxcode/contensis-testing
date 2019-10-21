@@ -10,7 +10,7 @@ const News = ({ articles, loadArticles }) => {
     console.log(articles);
   }, []);
 
-  return articles.map(article => {
+  const articlesJSX = articles.map(article => {
     return (
       <Article
         title={article.title}
@@ -20,6 +20,13 @@ const News = ({ articles, loadArticles }) => {
       />
     );
   });
+
+  return (
+    <div className="News">
+      <h1>News</h1>
+      {articlesJSX}
+    </div>
+  );
 };
 
 const mapStateToProps = state => {

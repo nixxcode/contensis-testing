@@ -21,10 +21,10 @@ const Header = () => {
     <HeaderStyled>
       <Logo />
       <Nav>
-        <NavItem text="ITEM1" link="#" />
-        <NavItem text="ITEM2" link="#" />
-        <NavItem text="ITEM3" link="#" />
-        <NavItem text="ITEM4" link="#" />
+        <NavItem text="NEWS" link="/news" />
+        <NavItem text="SERVICES" link="/services" />
+        <NavItem text="ABOUT" link="/about" />
+        <NavItem text="CONTACT US" link="/contact" />
       </Nav>
     </HeaderStyled>
   );

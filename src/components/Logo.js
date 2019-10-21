@@ -1,10 +1,11 @@
 import React from "react";
-import styled from "styled-components";
-
-const LogoStyled = styled.div``;
 
 const Logo = () => {
-  return <LogoStyled>Logo Here</LogoStyled>;
+  return (
+    <a href="/">
+      <div>Logo Here</div>
+    </a>
+  );
 };
 
 export default Logo;

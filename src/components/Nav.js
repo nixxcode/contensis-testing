@@ -15,12 +15,6 @@ const NavStyled = styled.nav`
 
   a {
     margin: 1rem;
-    color: whitesmoke;
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
   }
 
   a:last-child {
