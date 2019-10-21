@@ -11,8 +11,10 @@ const News = ({ articles, loadArticles }) => {
   }, []);
 
   const articlesJSX = articles.map(article => {
+    console.log(article.sys.id);
     return (
       <Article
+        key={article.sys.id}
         title={article.title}
         content={article.content}
         author={article.author}

@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import { Switch, Route } from "react-router-dom";
 
 import Article from "./Article";
