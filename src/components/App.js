@@ -10,7 +10,7 @@ const App = ({ articles, loadArticles }) => {
     <Fragment>
       <GlobalStyle />
       <Header />
-      <Main articles={articles} />
+      <Main />
       <Footer />
     </Fragment>
   );
