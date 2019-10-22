@@ -3,7 +3,7 @@ import { Client } from "contensis-delivery-api";
 let contensisConfig = {
   rootUrl: "https://cms-ps-dev-sandbox.cloud.contensis.com",
   accessToken: "AfTWtGox8aKdgO85rXXSJrWUXa97BA1aXP4fwaIrliDSvWNz",
-  projectId: "dtp",
+  projectId: "website",
   language: "en-GB",
   versionStatus: "published",
   pageSize: 25
