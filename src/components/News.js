@@ -7,11 +7,11 @@ import Article from "./Article";
 const News = ({ articles, loadArticles }) => {
   useEffect(() => {
     loadArticles();
-    console.log(articles);
+    //console.log(articles);
   }, []);
 
   const articlesJSX = articles.map(article => {
-    console.log(article.sys.id);
+    //console.log(article.sys.id);
     return (
       <Article
         key={article.sys.id}

@@ -2,10 +2,9 @@ import React from "react";
 import styled from "styled-components/macro";
 import { Switch, Route } from "react-router-dom";
 
-import Article from "./Article";
 import Home from "./Home";
 import News from "./News";
-import NotFound from "./NotFound";
+import EntryHandler from "./EntryHandler";
 
 const MainStyled = styled.main`
   padding: 2rem 4rem;
@@ -17,7 +16,7 @@ const Main = () => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/news" component={News} />
-        <Route component={NotFound} />
+        <Route component={EntryHandler} />
       </Switch>
     </MainStyled>
   );
