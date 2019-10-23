@@ -10,7 +10,9 @@ const Image = styled(({ data, className }) => {
     return (
       <figure className={className}>
         <ImageApi
-          source={data.asset.sys && data.asset.sys.uri}
+          source={
+            data.asset.sys && data.asset.sys.baseUris[0] + data.asset.sys.uri
+          }
           altText={data.altText}
           width={600}
         />

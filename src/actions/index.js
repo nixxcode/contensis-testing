@@ -1,4 +1,4 @@
-import { fetchArticles, fetchEntries } from "../apis/contensis";
+import { fetchArticles, fetchEntry } from "../apis/contensis";
 
 export const loadArticles = () => async dispatch => {
   const articles = await fetchArticles();
@@ -6,9 +6,9 @@ export const loadArticles = () => async dispatch => {
   dispatch({ type: "LOAD_ARTICLES", payload: articles });
 };
 
-export const loadEntries = () => async dispatch => {
-  const entries = await fetchEntries();
-  //console.log(entries);
+export const loadEntry = slug => async dispatch => {
+  const entry = await fetchEntry(slug);
+  //console.log(entry);
 
-  dispatch({ type: "LOAD_ENTRIES", payload: entries });
+  dispatch({ type: "LOAD_ENTRY", payload: entry });
 };

@@ -1,4 +1,4 @@
-import { Client } from "contensis-delivery-api";
+import { Client, Query, Op } from "contensis-delivery-api";
 
 const contensisConfig = {
   rootUrl: "https://cms-ps-dev-sandbox.cloud.contensis.com",
@@ -19,11 +19,13 @@ export async function fetchArticles() {
   return articleList.items;
 }
 
-export async function fetchEntries() {
+export async function fetchEntry(slug) {
   const client = Client.create(contensisConfig);
-  const entries = await client.entries.list();
+  const query = new Query(Op.equalTo("sys.slug", slug));
 
-  // console.log(entries);
+  const entry = await client.entries.search(query, 1);
 
-  return entries.items;
+  console.log(entry.items);
+
+  return entry.items.length ? entry.items[0] : {};
 }

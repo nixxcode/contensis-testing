@@ -1,25 +1,24 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 
-import { loadEntries } from "../actions";
+import { loadEntry } from "../actions";
 import NotFound from "./NotFound";
 import ContentPage from "./ContentPage";
 
-const EntryHandler = ({ entries, contentLoaded, loadEntries }) => {
+const EntryHandler = ({ entry, contentLoaded, loadEntry }) => {
   let path = window.location.pathname;
   path = path[0] === "/" ? path.substr(1) : path;
 
   useEffect(() => {
-    loadEntries();
+    //console.log(path);
+    loadEntry(path);
   }, []);
 
   if (!contentLoaded) return <div>Please wait...</div>;
 
-  //console.log(entries);
-
-  // Search for correct entry based on slug
-  const entry = entries.filter(ent => ent.sys.slug === path)[0];
-  if (entry == null) return <NotFound />;
+  //console.log(entry);
+  if (Object.keys(entry).length === 0 && entry.constructor === Object)
+    return <NotFound />;
 
   let entryJSX = null;
   switch (entry.sys.contentTypeId) {
@@ -35,12 +34,12 @@ const EntryHandler = ({ entries, contentLoaded, loadEntries }) => {
 
 const mapStateToProps = state => {
   return {
-    entries: state.entries,
-    contentLoaded: state.entries != null
+    entry: state.entry,
+    contentLoaded: state.entry != null
   };
 };
 
 export default connect(
   mapStateToProps,
-  { loadEntries }
+  { loadEntry }
 )(EntryHandler);
